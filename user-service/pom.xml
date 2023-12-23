@@ -2,6 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<!--For create parent and child relationship between pom's we need to define below code statement-->
     <parent>
         <artifactId>ticketing-project-microservices</artifactId>
         <groupId>com.cydeo</groupId>
@@ -13,6 +15,10 @@
     <artifactId>user-service</artifactId>
 
 
+<!--For example: if my parent pom.xml have 1000 dependency and my child pom.xml only need parent's 10 dependency,
+ we need to define these 10 dependency in child pom.xml without version. if also child want to use unique dependency
+that is not defined on the parent pom.xml, in this situation we need to define this dependency on child's pom.xml with
+version and this dependency unique for this child pom.xml ...-->
     <dependencies>
 
         <dependency>

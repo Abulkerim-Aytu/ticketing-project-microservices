@@ -1,12 +1,12 @@
+<!--I am managing the all the MicroServices pom.xml (dependencies) in one place (this main/parent template pom.xml) for avoiding waste time on each pom.xml configuration -->
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<!--This means "do not create any jar from this pom.xml , this pom only use as a template"-->
     <packaging>pom</packaging>
-
-
-    
+<!--The default one is jar <packaging>jar</packaging>-->
 
     <modules>
         <module>app-domain-model</module>
@@ -29,6 +29,7 @@
     <name>ticketing-project-microservices</name>
     <description>ticketing-project-microservices</description>
 
+<!--Here we define the version of used properties-->
     <properties>
         <java.version>11</java.version>
         <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
@@ -38,8 +39,9 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
+    <!--These Dependencies are the common dependencies for child pom.xml-->
+    <!--For that we need to put all the dependency under <dependencyManagement>-->
     <dependencyManagement>
-
         <dependencies>
             <dependency>
                 <groupId>com.cydeo</groupId>
