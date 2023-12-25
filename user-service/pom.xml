@@ -21,6 +21,7 @@ that is not defined on the parent pom.xml, in this situation we need to define t
 version and this dependency unique for this child pom.xml ...-->
     <dependencies>
 
+<!--Here we imported the common used DTO,Entity...-->
         <dependency>
             <groupId>com.cydeo</groupId>
             <artifactId>app-domain-model</artifactId>
